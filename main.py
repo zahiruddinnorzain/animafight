@@ -4,11 +4,15 @@ import os.path
 
 def save(nama1, Nyawa1, Atk1, Def1):	#save function
 	file = open(nama1 + ".sav","w") 	#bukak file
- 
+ 	
+	Nyawa1 = '%03d' % int(Nyawa1)	#bagi dia jadi 3 digit
+	Atk1 = '%03d' % int(Atk1)
+	Def1 = '%03d' % int(Def1)
+
 	file.write(Nyawa1)		#save nyawa
-	file.write("\n")		
+	#file.write("\n")		
 	file.write(Atk1)			#save atk
-	file.write("\n")
+	#file.write("\n")
 	file.write(Def1)			#save def
 	
  
@@ -31,12 +35,12 @@ def main():
 		data_file=str(file.readlines(1))
 		file.close()
 
-		list(data_file)
-		#print(data_file)
+		list(data_file)				#break kan string jd character
+		print(data_file)
 
-		Nyawa = int(data_file[2])
-		Atk = int(data_file[9])
-		Def = int(data_file[16])
+		Nyawa = int(data_file[4])	#pilih character ke empat
+		Atk = int(data_file[7])
+		Def = int(data_file[10])
 		
 		print("Load Successfull")
 
@@ -68,7 +72,7 @@ def main():
 			save(str(nama), str(Nyawa), str(Atk), str(Def))
 			label = "Saved!"
 
-		if CMD == 5:
+		if CMD == 5:				#tutup
 			break
 
 		os.system('clear')			#clear scrn
