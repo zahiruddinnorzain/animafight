@@ -38,9 +38,9 @@ def main():
 		list(data_file)				#break kan string jd character
 		print(data_file)
 
-		Nyawa = int(data_file[4])	#pilih character ke empat
-		Atk = int(data_file[7])
-		Def = int(data_file[10])
+		Nyawa = str(data_file[2])+str(data_file[3])+str(data_file[4])	#pilih character ke empat
+		Atk = str(data_file[5])+str(data_file[6])+str(data_file[7])
+		Def = str(data_file[8])+str(data_file[9])+str(data_file[10])
 		
 		print("Load Successfull")
 
@@ -57,15 +57,15 @@ def main():
 		CMD = input("Command: ")	#input command
 
 		if CMD == 1:				#training attack
-			Nyawa = Nyawa + 1
+			Nyawa = int(Nyawa) + 1
 			label = " "
 
 		if CMD == 2:				#training attack
-			Atk = Atk + 1
+			Atk = int(Atk) + 1
 			label = " "
 
 		if CMD == 3:				#training defence
-			Def = Def + 1
+			Def = int(Def) + 1
 			label = " "
 
 		if 	CMD == 4:
