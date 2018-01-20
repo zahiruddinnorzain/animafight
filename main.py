@@ -17,7 +17,7 @@ def save(nama1, Nyawa1, Atk1, Def1):	# save function
 	
 	file.close()
 
-def lawan(Nyawa2nd, Def2nd, Atk1ft):
+def lawan(Nyawa2nd, Def2nd, Atk1ft):	# algorithm bila berlawan
 
 	Damage = Atk1ft - Def2nd
 	Nyawa2nd = Nyawa2nd - Damage
@@ -25,9 +25,9 @@ def lawan(Nyawa2nd, Def2nd, Atk1ft):
 	return Nyawa2nd
 
 
-def tmpt_lawan():
-	binatang1 = raw_input("nama 1: ")
-	binatang2 = raw_input("nama 2: ")
+def tmpt_lawan():									# medan perlawanan
+	binatang1 = raw_input("Binatang 1: ")			#pilih binatang
+	binatang2 = raw_input("Binatang 2: ")			#pilih binatang 2
 
 	if os.path.isfile(binatang1+".sav") is True:		# cek save file
 		# load item here !!!!!
@@ -68,8 +68,24 @@ def tmpt_lawan():
 	if os.path.isfile(binatang2+".sav") is False:	# cek save file takde
 		print("Name 2 don't exist")
 		#main()
-	
-	while Nyawa_bin2 != 0:
+
+	finish = False
+
+	while finish is False :
+
+		if Nyawa_bin1 <= 0 :
+			finish = True
+			print("==============")
+			print("Binatang 2 WIN")
+			print("==============")
+			break
+
+		if Nyawa_bin2 <= 0 :
+			finish = True
+			print("==============")
+			print("Binatang 1 WIN")
+			print("==============")
+			break
 
 		test=raw_input("pause")
 
@@ -105,7 +121,8 @@ def tmpt_lawan():
 
 
 
-		test=raw_input("pause")
+
+	test=raw_input("pause")
 
 
 
@@ -182,5 +199,5 @@ def main():
 
 if __name__ == "__main__":
 	main()
-	lawan()
-	tmpt_lawan()
+	#lawan()
+	#tmpt_lawan()
