@@ -17,12 +17,105 @@ def save(nama1, Nyawa1, Atk1, Def1):	# save function
 	
 	file.close()
 
+def lawan(Nyawa2nd, Def2nd, Atk1ft):
+
+	Damage = Atk1ft - Def2nd
+	Nyawa2nd = Nyawa2nd - Damage
+
+	return Nyawa2nd
+
+
+def tmpt_lawan():
+	binatang1 = raw_input("nama 1: ")
+	binatang2 = raw_input("nama 2: ")
+
+	if os.path.isfile(binatang1+".sav") is True:		# cek save file
+		# load item here !!!!!
+		file = open(binatang1+".sav", "r")
+		data_file=str(file.readlines(1))
+		file.close()
+
+		list(data_file)				# break kan string jd character
+		print(data_file)
+
+		# pilih character dan tambah string string nombor
+		Nyawa_bin1 = str(data_file[2])+str(data_file[3])+str(data_file[4])
+		Atk_bin1 = str(data_file[5])+str(data_file[6])+str(data_file[7])
+		Def_bin1 = str(data_file[8])+str(data_file[9])+str(data_file[10])
+
+		#print(Nyawa_bin1)
+		#print(Atk_bin1)
+		#print(Def_bin1)
+
+	if os.path.isfile(binatang2+".sav") is True:		# cek save file
+		# load item here !!!!!
+		file = open(binatang2+".sav", "r")
+		data_file=str(file.readlines(1))
+		file.close()
+
+		list(data_file)				# break kan string jd character
+		print(data_file)
+
+		# pilih character dan tambah string string nombor
+		Nyawa_bin2 = str(data_file[2])+str(data_file[3])+str(data_file[4])
+		Atk_bin2 = str(data_file[5])+str(data_file[6])+str(data_file[7])
+		Def_bin2 = str(data_file[8])+str(data_file[9])+str(data_file[10])
+
+	if os.path.isfile(binatang1+".sav") is False:	# cek save file takde
+		print("Name 1 don't exist")
+		#main()
+
+	if os.path.isfile(binatang2+".sav") is False:	# cek save file takde
+		print("Name 2 don't exist")
+		#main()
+	
+
+	test=raw_input("pause")
+
+	print("binatang 1 stat: ")
+	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+	print("binatang 2 stat: ")
+	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+
+
+
+	satuVSdua = lawan(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
+	Nyawa_bin2 = satuVSdua
+	print("Nyawa binatang 2: " + str(satuVSdua))
+
+
+	print("binatang 1 stat: ")
+	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+	print("binatang 2 stat: ")
+	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+
+
+
+	duaVSsatu = lawan(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
+	Nyawa_bin1 = duaVSsatu
+	print("Nyawa binatang 1: " + str(duaVSsatu))
+
+
+	print("binatang 1 stat: ")
+	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+	print("binatang 2 stat: ")
+	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+
+
+
+
+	test=raw_input("pause")
+
+
+
+
 def main():
 	
 	# initial value
 	Nyawa = 0	# initial setting nyawa
 	Atk = 0		# initial setting attack
 	Def = 0		# initial setting defence
+	label = " "
 
 
 	# key in nama dan cek save file
@@ -75,6 +168,9 @@ def main():
 		if CMD == 5:				# tutup
 			break
 
+		if CMD == 6:				# tutup
+			tmpt_lawan()
+
 		os.system('clear')			# clear scrn
 		print(label)
 
@@ -85,3 +181,5 @@ def main():
 
 if __name__ == "__main__":
 	main()
+	lawan()
+	tmpt_lawan()
