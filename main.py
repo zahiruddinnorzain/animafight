@@ -24,6 +24,13 @@ def lawan(Nyawa2nd, Def2nd, Atk1ft):	# algorithm bila berlawan
 
 	return Nyawa2nd
 
+def Dmg(Nyawa2nd, Def2nd, Atk1ft):	# algorithm bila berlawan
+
+	Damage = Atk1ft - Def2nd
+	Nyawa2nd = Nyawa2nd - Damage
+
+	return Damage
+
 
 def tmpt_lawan():									# medan perlawanan
 	
@@ -103,9 +110,12 @@ def tmpt_lawan():									# medan perlawanan
 
 
 		print("Binatang 1 serang Binatang 2 !!")
+		satuVSduaDMG = Dmg(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
+		print("Dengan damage : " + str(satuVSduaDMG))
 		satuVSdua = lawan(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
 		Nyawa_bin2 = satuVSdua
 		print("Nyawa binatang 2: " + str(satuVSdua))
+		print("\n")
 
 
 		#print("binatang 1 stat: ")
@@ -115,9 +125,12 @@ def tmpt_lawan():									# medan perlawanan
 
 
 		print("Binatang 2 serang Binatang 1 !!")
+		duaVSsatuDMG = Dmg(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
+		print("Dengan damage: " + str(duaVSsatuDMG))
 		duaVSsatu = lawan(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
 		Nyawa_bin1 = duaVSsatu
 		print("Nyawa binatang 1: " + str(duaVSsatu))
+		print("\n")
 
 
 		#print("binatang 1 stat: ")
