@@ -69,42 +69,43 @@ def tmpt_lawan():
 		print("Name 2 don't exist")
 		#main()
 	
+	while Nyawa_bin2 != 0:
 
-	test=raw_input("pause")
+		test=raw_input("pause")
 
-	print("binatang 1 stat: ")
-	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
-	print("binatang 2 stat: ")
-	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
-
-
-
-	satuVSdua = lawan(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
-	Nyawa_bin2 = satuVSdua
-	print("Nyawa binatang 2: " + str(satuVSdua))
-
-
-	print("binatang 1 stat: ")
-	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
-	print("binatang 2 stat: ")
-	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+		#print("binatang 1 stat: ")
+		#print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+		#print("binatang 2 stat: ")
+		#print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
 
 
 
-	duaVSsatu = lawan(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
-	Nyawa_bin1 = duaVSsatu
-	print("Nyawa binatang 1: " + str(duaVSsatu))
+		satuVSdua = lawan(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
+		Nyawa_bin2 = satuVSdua
+		print("Nyawa binatang 2: " + str(satuVSdua))
 
 
-	print("binatang 1 stat: ")
-	print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
-	print("binatang 2 stat: ")
-	print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+		#print("binatang 1 stat: ")
+		#print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+		#print("binatang 2 stat: ")
+		#print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
+
+
+
+		duaVSsatu = lawan(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
+		Nyawa_bin1 = duaVSsatu
+		print("Nyawa binatang 1: " + str(duaVSsatu))
+
+
+		#print("binatang 1 stat: ")
+		#print(str(Nyawa_bin1), str(Atk_bin1), str(Def_bin1))
+		#print("binatang 2 stat: ")
+		#print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
 
 
 
 
-	test=raw_input("pause")
+		test=raw_input("pause")
 
 
 
