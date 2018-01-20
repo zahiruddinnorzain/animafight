@@ -26,6 +26,9 @@ def lawan(Nyawa2nd, Def2nd, Atk1ft):	# algorithm bila berlawan
 
 
 def tmpt_lawan():									# medan perlawanan
+	
+	Nyawa_bin1=0
+	Nyawa_bin1=0
 	binatang1 = raw_input("Binatang 1: ")			#pilih binatang
 	binatang2 = raw_input("Binatang 2: ")			#pilih binatang 2
 
@@ -63,10 +66,14 @@ def tmpt_lawan():									# medan perlawanan
 
 	if os.path.isfile(binatang1+".sav") is False:	# cek save file takde
 		print("Name 1 don't exist")
+		finish = True
+		os.system("exit")
 		#main()
 
 	if os.path.isfile(binatang2+".sav") is False:	# cek save file takde
 		print("Name 2 don't exist")
+		finish = True
+		os.system("exit")
 		#main()
 
 	finish = False
@@ -95,7 +102,7 @@ def tmpt_lawan():									# medan perlawanan
 		#print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
 
 
-
+		print("Binatang 1 serang Binatang 2 !!")
 		satuVSdua = lawan(int(Nyawa_bin2), int(Def_bin2), int(Atk_bin1))
 		Nyawa_bin2 = satuVSdua
 		print("Nyawa binatang 2: " + str(satuVSdua))
@@ -107,7 +114,7 @@ def tmpt_lawan():									# medan perlawanan
 		#print(str(Nyawa_bin2), str(Atk_bin2), str(Def_bin2))
 
 
-
+		print("Binatang 2 serang Binatang 1 !!")
 		duaVSsatu = lawan(int(Nyawa_bin1), int(Def_bin1), int(Atk_bin2))
 		Nyawa_bin1 = duaVSsatu
 		print("Nyawa binatang 1: " + str(duaVSsatu))
