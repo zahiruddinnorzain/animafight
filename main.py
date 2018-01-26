@@ -1,6 +1,14 @@
 import os
 import os.path
 # from pathlib import Path
+def menu():
+	print 'ANIMAFIGHT'
+	print 'Tekan 1 : +Nyawa'
+	print 'Tekan 2 : +Atk'
+	print 'Tekan 3 : +Def'
+	print 'Tekan 4 : Save'
+	print 'Tekan 5 : Exit'
+	print 'Tekan 6 : FIGHT!'
 
 def save(nama1, Nyawa1, Atk1, Def1):	# save function
 	file = open(nama1 + ".sav", "w") 	# bukak file
@@ -182,6 +190,7 @@ def main():
 
 	print("Nyawa " + str(Nyawa) + " Atk " + str(Atk) + " Def " + str(Def))
 
+	menu()
 	# training place
 	while True:
 
@@ -214,7 +223,7 @@ def main():
 
 		# show stats
 		print("Nyawa " + str(Nyawa) + " Atk " + str(Atk) + " Def " + str(Def)) 
-
+		menu()
 
 
 if __name__ == "__main__":
