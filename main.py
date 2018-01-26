@@ -1,7 +1,7 @@
 import os
 import os.path
 # from pathlib import Path
-def menu():
+def menu():					#menu function
 	print 'ANIMAFIGHT'
 	print 'Tekan 1 : +Nyawa'
 	print 'Tekan 2 : +Atk'
